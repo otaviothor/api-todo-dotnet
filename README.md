@@ -10,7 +10,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O projeto é uma API de Produtos com ASP.NET Core, Entity Framework Core e SQLite
+O projeto é uma API de To Do com ASP.NET Core, Entity Framework Core e SQLite
 
 ## 🚀 Como executar
 
