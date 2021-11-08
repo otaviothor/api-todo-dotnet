@@ -18,7 +18,7 @@ namespace Todo.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.12");
 
-            modelBuilder.Entity("Todo.Models.TodoClass", b =>
+            modelBuilder.Entity("Todo.Models.TodoModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

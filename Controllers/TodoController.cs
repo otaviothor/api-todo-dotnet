@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -5,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Todo.Data;
 using Todo.Models;
+using Todo.ViewModels;
 
 namespace Todo.Controllers
 {
@@ -39,8 +41,36 @@ namespace Todo.Controllers
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             if (todo == null) return NotFound();
-            
+
             return Ok(todo);
+        }
+
+        [HttpPost("todos")]
+        public async Task<IActionResult> PostAsync(
+            [FromServices] AppDbContext context,
+            [FromBody] CreateTodoViewModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid) return BadRequest();
+
+                var todo = new TodoModel
+                {
+                    Date = DateTime.Now,
+                    Done = false,
+                    Title = model.Title
+                };
+
+                await context.Todos.AddAsync(todo);
+                await context.SaveChangesAsync();
+
+                return Created($"v1/todos/{todo.Id}", todo);
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
         }
     }
 }
