@@ -392,4 +392,7 @@ FodyWeavers.xsd
 .idea/
 *.sln.iml
 
+# SQLite database
+app.db
+
 # End of https://www.toptal.com/developers/gitignore/api/csharp

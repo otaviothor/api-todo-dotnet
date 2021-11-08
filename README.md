@@ -15,7 +15,8 @@ O projeto é uma API de To Do com ASP.NET Core, Entity Framework Core e SQLite
 ## 🚀 Como executar
 
 - Clone o repositório
-- Instale as dependências com `dotnet restore`
+- Instale as dependências com `dotnet restore` e tool do EF Core com `dotnet tool install --global dotnet-ef`
+- Criar as migrations com `dotnet ef database update`
 - Inicie o servidor com `dotnet watch run`
 
 Agora você pode fazer as requisições que estão no arquivo [`request.http`](request.http).
