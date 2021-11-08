@@ -11,3 +11,15 @@ content-type: application/json
 {
 	"title": "Estudar C#"
 }
+
+### put
+PUT https://localhost:5001/v1/todos/1 HTTP/1.1
+content-type: application/json
+
+{
+	"title": "Estudar .NET"
+}
+
+### delete
+DELETE  https://localhost:5001/v1/todos/1 HTTP/1.1
+content-type: application/json
